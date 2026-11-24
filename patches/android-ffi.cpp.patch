@@ -1,0 +1,37 @@
+--- a/ios/FlutterStockfish/ffi.cpp (plugin 1.8.1)
++++ b/android/ffi.cpp
+@@ -2,12 +2,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ 
+-#include "../Stockfish/src/bitboard.h"
+-#include "../Stockfish/src/misc.h"
+-#include "../Stockfish/src/position.h"
+-#include "../Stockfish/src/types.h"
+-#include "../Stockfish/src/uci.h"
+-#include "../Stockfish/src/tune.h"
++#include <cstring>
+ 
+ #include "ffi.h"
+ 
+@@ -22,7 +17,7 @@
+ #define CHILD_READ_FD (pipes[PARENT_WRITE_PIPE][READ_FD])
+ #define CHILD_WRITE_FD (pipes[PARENT_READ_PIPE][WRITE_FD])
+ 
+-int main(int, char **);
++int stockfish_engine_main(int, char **);
+ 
+ const char *QUITOK = "quitok\n";
+ int pipes[NUM_PIPES][2];
+@@ -42,8 +37,9 @@
+   dup2(CHILD_WRITE_FD, STDOUT_FILENO);
+ 
+   int argc = 1;
+-  char *argv[] = {""};
+-  int exitCode = main(argc, argv);
++  char name[] = "stockfish-lite";
++  char *argv[] = {name};
++  int exitCode = stockfish_engine_main(argc, argv);
+ 
+   std::cout << QUITOK << std::flush;
+ 

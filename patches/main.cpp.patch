@@ -1,0 +1,11 @@
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -55,7 +55,7 @@
+ 
+     Tune::init(uci->engine_options());
+ 
+-    uci.loop();
++    uci->loop();
+ #else
+     uciP = new UCIEngine(argc, argv); // initialize the UCI object
+     Tune::init(uciP->engine_options());

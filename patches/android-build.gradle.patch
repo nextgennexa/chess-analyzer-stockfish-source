@@ -1,0 +1,27 @@
+--- a/android/build.gradle (plugin 1.8.1)
++++ b/android/build.gradle
+@@ -1,24 +1,6 @@
+ group 'com.stockfish'
+ version '1.0'
+ 
+-buildscript {
+-    repositories {
+-        google()
+-        jcenter()
+-    }
+-
+-    dependencies {
+-        classpath 'com.android.tools.build:gradle:3.5.0'
+-    }
+-}
+-
+-rootProject.allprojects {
+-    repositories {
+-        google()
+-        jcenter()
+-    }
+-}
+-
+ apply plugin: 'com.android.library'
+ 
+ android {
