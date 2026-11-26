@@ -13,7 +13,7 @@
 - Name nn-61e7af4bb97d, SHA-256 61e7af4bb97d51eeeb25d322916f86513b5cd3a827ce189c98c6e31946f99e5b, 1,166,381 bytes.
 - Source: https://tests.stockfishchess.org/api/nn/nn-61e7af4bb97d.nnue — Stockfish 19 "lite" network credited by the
   upstream README to sscg13 (https://github.com/sscg13/Stockfish/tree/sf19-1mb). Unmodified. Embedded in the binary at
-  build time (`USE_LITE_NET`). Licence: UNRESOLVED — see `CORRESPONDENCE.md` § Network licence.
+  build time (`USE_LITE_NET`). Licence: CC0 1.0 — see `CORRESPONDENCE.md` § Network licence.
 
 ## Flutter plugin `stockfish` 1.8.1 (Arjan Aswal, GPL-3.0)
 - Origin: https://pub.dev/packages/stockfish version 1.8.1 (archive SHA-256
@@ -38,7 +38,12 @@
   https://stockfishchess.org — free software under the GNU General Public License version 3 (`COPYING`).
 - Stockfish.js: by Nathan Rugg / Chess.com, LLC (https://github.com/nmrugg/stockfish.js), GPL-3.0.
 - Flutter plugin `stockfish`: by Arjan Aswal (https://github.com/ArjanAswal/stockfish), GPL-3.0.
-- NNUE network nn-61e7af4bb97d: by sscg13 (https://github.com/sscg13). Licence UNRESOLVED (see CORRESPONDENCE.md).
+- NNUE network nn-61e7af4bb97d: by sscg13 (https://github.com/sscg13). Licence CC0 1.0 (see CORRESPONDENCE.md).
 - Training data: Stockfish networks are trained on data provided by the Leela Chess Zero project
   (https://lczero.org), made available under the Open Database License (ODbL),
   https://opendatacommons.org/licenses/odbl/1-0/. Whether this specific network used such data was not verified.
+
+## Standalone Android engine program (android-uci/, added 2026-11-26 in package r3)
+- `android-uci/CMakeLists.txt` and `android-uci/build.sh` were written by Chess Analyzer. They build the unchanged
+  `android/lite/` sources (including the one-line `main.cpp` change above) as a standalone executable using the normal
+  Stockfish `main`. Used by Android 1.0.8 (versionCode 19) and later.

@@ -27,17 +27,19 @@ The distributed .js/.wasm/COPYING.txt are byte-identical to the upstream author'
 `upstream/stockfish.js-19.0.0.tar.gz`. NOT REPRODUCED LOCALLY: the Web .js/.wasm were not rebuilt from source here (emscripten 3.1.7 not installed); their
 correspondence rests on byte-identity with the upstream author's published release, not on a local build.
 
-## Network licence — UNRESOLVED
-Evidence (checked 2026-11-23):
+## Android 1.0.8 (19) and later — libstockfish_uci.so (verified 2026-11-26)
+| ABI | Size | SHA-256 of the distributed file |
+|---|---|---|
+| arm64-v8a | 2,036,368 B | 40f289e3f58163f663befda92f1749ab317b1470be9a0dd0edaef668050889b8 |
+| armeabi-v7a | 1,746,452 B | 39e879231bcc58a403c29c8bb262ebc725ea51215fa7edb69977fe54191441d7 |
+| x86_64 | 2,084,456 B | a99dde6db7fa03ff1838375ab9df10b71feeb4dec599498c619afd3102da4ea4 |
+Rebuilt with `android-uci/build.sh` from this package: same size; after removing the `.note.gnu.build-id` section
+from both, the files are byte-identical. The build ID differs because it depends on the build directory.
+
+## Network licence — CC0 1.0
 - The file is byte-identical to https://tests.stockfishchess.org/api/nn/nn-61e7af4bb97d.nnue
   (SHA-256 61e7af4bb97d51eeeb25d322916f86513b5cd3a827ce189c98c6e31946f99e5b, 1,166,381 bytes).
-- Author attribution: sscg13. sscg13/Stockfish branch `sf19-1mb` uses it as the default network
-  (`EvalFileDefaultName "nn-61e7af4bb97d.nnue"`, commit f5e5c633dd, 2026-08-03); the stockfish.js README credits
-  "sscg13 for Stockfish 19 lite nets"; lichess-org/stockfish-web lists it for "sf_19_smallnet".
-- It is NOT in https://github.com/official-stockfish/networks (the CC0-1.0 repository).
-- The fishtest network upload form (official-stockfish/fishtest, nn_upload.html.j2 at ea59d0c793; same wording in
-  nn_upload.mak since at least 2020-10) states: "By uploading, you license your network under a CC0 license." and
-  requires: "You are the author of this network or have obtained the network with a CC0 license."
-- Not verified: who uploaded this file to fishtest and when (the fishtest network page could not be read).
-Status: UNRESOLVED. The upload terms suggest CC0, but no net-specific statement or confirmed upload record has been
-obtained. Do not rely on a CC0 licence for this file until confirmed by its author or an authoritative record.
+- The official Fishtest network page (https://tests.stockfishchess.org/nns?network_name=nn-61e7af4bb97d) lists this
+  network, uploaded by sscg13 on 2026-08-03, under the Fishtest upload terms: "By uploading, you license your network
+  under a CC0 license."
+- Author attribution: sscg13 (https://github.com/sscg13).
